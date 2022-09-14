@@ -1,0 +1,47 @@
+
+<div class="container-sm">
+<table class="table table-bordered table-sm">
+  <tbody>
+    <tr>
+      <th scope="row">Employee ID</th>
+      <td><%=@employee.id%></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><%=@employee.email%></td>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td><%=@employee.name%></td>
+  
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><%=@employee.DOB%></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">Base-Salary</th>
+     <td><%=@employee.BaseSalary%></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Status</th>
+     <td><%=@employee.status%></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">SalaryDetails</th>
+     <td><%=link_to "Salary details", user_salaries_path(@employee.id), class: "text-success"%></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">View all Loans</th>
+     <td><%=link_to "All Loans", user_loans_path(@employee.id), class: "text-success"%></td>
+      
+    </tr>
+  </tbody>
+</table>
+<%=link_to "Return to Employees", users_path, class: "text-success" %>
+<%=button_to "Sign Out", destroy_employee_session_path, method: :delete, class:"btn btn-secondry" %>
+</div>

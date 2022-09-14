@@ -1,0 +1,60 @@
+<<div class= "container">
+
+<%if @employee.errors.any?%>
+    <ul>
+     <%@employee.errors.full_messages.each do |msg|%>
+        <li><%=msg%></li>
+<%end%>
+    </ul>
+<%end%>
+<div class= "row justify-content-center">
+<div class= "col-12">
+<%= form_with model:@employee, url:user_path do |f| %>
+<div class="form-group row">
+
+        <%=f.label :name, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :name, class: "form-control shadow rounded" %>
+        </div>
+</div>
+
+    <div class="form-group row">
+       <%=f.label :email , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :email, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :password , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :password, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :DOB , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :DOB, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :BaseSalary , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :BaseSalary, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+       <%=f.select :status, [:active, :terminated, :resigned] ,class:"col-2 col-form-label"%>
+    
+        
+    <div class="form-group row justify-content-center">
+    <%=f.submit class: "btn btn-outline-dark btn-lg " %>
+    </div>
+<%end%>
+</div>
+
+<%=link_to "Return to Employees", users_path, class: "text-success" %>
+<%=link_to "Add salary", new_user_salary_path(@employee.id),class: "text-success"%>
+<%=link_to "New Loan", new_user_loan_path(@employee.id), class: "text-success"%>
+
+
+</div>
+</div>

@@ -1,0 +1,38 @@
+<h1>This is index page</h1>
+<div class="container-sm">
+<% @employee.loans.each do |loan| %>
+<table class="table table-bordered table-sm">
+  <tbody>
+    <tr>
+      <th scope="row">Type</th>
+      <td><%=loan.loan_type%></td>
+    </tr>
+    <tr>
+      <th scope="row">Amount Taken</th>
+      <td><%=loan.total_amount%></td>
+    </tr>
+    <tr>
+      <th scope="row">Amount Remaining</th>
+      <td><%=loan.amount_remaining%></td>
+    </tr>
+    <tr>
+      <th scope="row">Installment Amount</th>
+      <td><%=loan.installment_amount%></td>
+    </tr>
+    <tr>
+    <tr>
+      <th scope="row">Installments paid</th>
+      <td><%=loan.installments_paid%></td>
+    </tr>
+    <tr>
+     <tr>
+    <tr>
+      <th scope="row">Installments remaining</th>
+      <td><%=loan.installments_remaining%></td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+<%end%>
+<%=link_to "Return to Employees", users_path, class: "text-success" %>
+</div>

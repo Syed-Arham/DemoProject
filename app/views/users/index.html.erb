@@ -1,0 +1,58 @@
+<div class="row justify-content-between" >
+<div class="col-6">
+<%= link_to 'New Employee', new_user_path,class:"btn btn-secondary" %>
+</div>
+<div class="col-6">
+<div class= "end-0">
+<%=button_to "Sign Out", destroy_employee_session_path, method: :delete, class:"btn btn-secondry" %>
+</div>
+</div>
+</div>
+<br/>
+<div class="card mt-0">
+<div class="card-header">
+<h1 class="text-center">Employees</h1>
+    
+  </div>
+
+<table class="table table-dark">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>DOB</th>
+      <th>Base Salary</th>
+      <th>Status</th>
+      <th>Admin?</th>
+      
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+    
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.DOB %></td>
+        <td><%= employee.BaseSalary %></td>
+        <td><%= employee.status %></td>
+        <td><%= employee.employee_type%>
+        
+        
+        <td><%= link_to 'Show', user_path(employee.id) , class:"btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_user_path(employee),class:"btn btn-success" %></td>
+      <%# <td><%= button_to 'Destroy', user_path(employee.id), method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
+        
+
+      </tr>
+      
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>
+<br/>

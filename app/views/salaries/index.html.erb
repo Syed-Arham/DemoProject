@@ -1,0 +1,36 @@
+<h1>All Salaries</h1>
+<div class="container-sm">
+<% @employee.salaries.each do |salary| %>
+<table class="table table-bordered table-sm">
+  <tbody>
+    <tr>
+      <th scope="row">Month</th>
+      <td><%=salary.month%></td>
+    </tr>
+    <tr>
+      <th scope="row">Year</th>
+      <td><%=salary.year%></td>
+    </tr>
+    <tr>
+      <th scope="row">Total Salary</th>
+      <td><%=salary.totalsalary%></td>
+  
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><%=salary.date%></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">SalaryDetails</th>
+     <td><%=link_to " Particular Salary details", user_salary_path(@employee.id, salary), class: "text-success"%></td>
+      
+    </tr>
+  </tbody>
+</table>
+<%end%>
+<%=link_to "Return to Employees", users_path, class: "text-success" %>
+
+
+
+</div>

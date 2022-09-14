@@ -1,0 +1,36 @@
+<h1>Add Loan</h1>
+
+<div class= "container">
+<div class= "row justify-content-center">
+<div class= "col-12">
+<%= form_with model: @loan, url:user_loans_path do |f| %>
+<div class="form-group row">
+
+        <%=f.label :amount_needed, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :total_amount, class: "form-control shadow rounded" %>
+        </div>
+        </div>
+        <%=f.label :loan_type, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :loan_type, class: "form-control shadow rounded" %>
+        </div>
+        </div>
+        <%=f.label :Number_of_installments, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :installments, class: "form-control shadow rounded" %>
+        </div>
+        </div>
+        <%=f.label :Starting_month, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :month, class: "form-control shadow rounded" %>
+        </div>
+        </div>
+
+    <div class="form-group row justify-content-center">
+    <%=f.submit class: "btn btn-outline-dark btn-lg " %>
+    </div>
+<%end%>
+</div>
+</div>
+</div>

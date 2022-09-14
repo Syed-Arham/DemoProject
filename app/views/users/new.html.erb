@@ -1,0 +1,61 @@
+<<div class= "container">
+
+<%if @employee.errors.any?%>
+    <ul>
+     <%@employee.errors.full_messages.each do |msg|%>
+        <li><%=msg%></li>
+<%end%>
+    </ul>
+<%end%>
+<div class= "row justify-content-center">
+<div class= "col-12">
+<%= form_with model:@employee, url:users_path do |f| %>
+<div class="form-group row">
+
+        <%=f.label :name, class: "col-2 col-form-label" %>
+        <div class="col-8">
+        <%=f.text_field :name, class: "form-control shadow rounded" %>
+        </div>
+</div>
+
+    <div class="form-group row">
+       <%=f.label :email , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :email, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :password , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :password, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :DOB , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :DOB, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class="form-group row">
+       <%=f.label :BaseSalary , class:"col-2 col-form-label"%>
+       <div class="col-8">
+       <%=f.text_field :BaseSalary, class:"form-control shawdow rounded" %>
+    </div>
+    </div>
+    <div class= "form_check_feild">
+  <%= f.label :employee_type, 'Is an HR account?', class:"form-check-label"%>
+
+  <%= f.check_box :employee_type, {class:"form-check-input", type:"checkbox"},"true", "false" %>
+  </div>
+    <div class="form-group row justify-content-center">
+    <%=f.submit class: "btn btn-outline-dark btn-lg " %>
+    </div>
+<%end%>
+</div>
+
+<%=link_to "Return to Employees", users_path, class: "text-success" %>
+<%=link_to "Add new Salary", new_user_salary_path(:user_id), class: "text-success"%>
+
+
+</div>
+</div>

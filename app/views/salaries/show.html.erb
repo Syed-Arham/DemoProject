@@ -1,0 +1,49 @@
+<h1>Salary Details for <%=@salary.month%> </h1>
+<div class="container-sm">
+<table class="table table-bordered table-sm">
+    <tbody>
+    <tr>
+      <th scope="row">Month</th>
+      <td><%=@salary.month%></td>
+    </tr>
+    <tr>
+      <th scope="row">Year</th>
+      <td><%=@salary.year%></td>
+    </tr>
+    <tr>
+      <th scope="row">Total Salary</th>
+      <td><%=@salary.totalsalary%></td>
+  
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><%=@salary.date%></td>
+    
+    </tr>
+    <tr>
+    <th scope="row">Bonus</th>
+    <td><%=@salary.additional_earning.bonus%></td>
+    </tr>
+    
+    <tr>
+    <th scope="row">Parking</th>
+    <td><%=@salary.additional_deduction.parking%></td>
+    </tr>
+
+    <tr>
+    <th scope="row">Penalty</th>
+    <td><%=@salary.additional_deduction.penalty%></td>
+    </tr>
+    <tr>
+    <tr>
+      <th scope="row">Comments</th>
+      <td><%=@salary.comments%></td>
+    
+    </tr>
+    <th scope="row">Download PDF</th>
+    <td><%=link_to "PDF", user_salary_path(@employee, @salary, format: :pdf)%></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
